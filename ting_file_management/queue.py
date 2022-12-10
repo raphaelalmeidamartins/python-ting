@@ -1,6 +1,27 @@
-class Queue:
+from collections.abc import Iterator, Iterable
+
+
+class QueueIterator(Iterator):
+    def __init__(self, queue):
+        self.__queue = queue
+        self.__index = 0
+
+    def __next__(self):
+        try:
+            current_item = self.__queue.search(self.__index)
+        except IndexError:
+            raise StopIteration()
+        else:
+            self.__index += 1
+            return current_item
+
+
+class Queue(Iterable):
     def __init__(self):
         self.__data = []
+
+    def __iter__(self):
+        return QueueIterator(self)
 
     def __len__(self):
         return len(self.__data)
