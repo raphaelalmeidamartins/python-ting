@@ -20,7 +20,7 @@ def process(path_file, queue: Queue):
     print(file_dict)
 
 
-def remove(queue):
+def remove(queue: Queue):
     item = queue.dequeue()
     if item is not None:
         print(f"Arquivo {item['nome_do_arquivo']} removido com sucesso")
@@ -28,7 +28,7 @@ def remove(queue):
         print("Não há elementos")
 
 
-def file_metadata(queue, position):
+def file_metadata(queue: Queue, position):
     try:
         print(queue.search(position))
     except IndexError:
