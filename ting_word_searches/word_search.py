@@ -1,7 +1,7 @@
 from ting_file_management.queue import Queue
 
 
-def exists_word(word, queue: Queue, include_content: bool = False):
+def exists_word(word: str, queue: Queue, include_content: bool = False):
     result = []
 
     for file_index, file in enumerate(queue, start=1):
@@ -27,5 +27,5 @@ def exists_word(word, queue: Queue, include_content: bool = False):
     return result
 
 
-def search_by_word(word, queue):
+def search_by_word(word: str, queue: Queue):
     return exists_word(word, queue, True)

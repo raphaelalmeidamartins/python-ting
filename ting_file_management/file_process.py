@@ -3,7 +3,7 @@ from ting_file_management.file_management import txt_importer
 from ting_file_management.queue import Queue
 
 
-def process(path_file, queue: Queue):
+def process(path_file: str, queue: Queue):
     for item in queue:
         if item["nome_do_arquivo"] == path_file:
             return None
@@ -28,7 +28,7 @@ def remove(queue: Queue):
         print("Não há elementos")
 
 
-def file_metadata(queue: Queue, position):
+def file_metadata(queue: Queue, position: int):
     try:
         print(queue.search(position))
     except IndexError:

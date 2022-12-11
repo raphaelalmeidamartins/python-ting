@@ -34,7 +34,7 @@ class Queue(Iterable):
             return self.__data.pop(0)
         return None
 
-    def search(self, index):
+    def search(self, index: int):
         if 0 <= index < len(self):
             return self.__data[index]
         raise IndexError("Index out of range")
