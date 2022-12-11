@@ -16,7 +16,7 @@ def process(path_file, queue: Queue):
         "linhas_do_arquivo": file_lines,
     }
 
-    queue.enqueue(file_dict)u
+    queue.enqueue(file_dict)
     print(file_dict)
 
 
